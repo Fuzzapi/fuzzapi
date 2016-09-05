@@ -8,7 +8,22 @@
 </head>
 <body>
 
-<%= yield %>
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">API Fuzzer</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+  <form class="form-inline pull-xs-right">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

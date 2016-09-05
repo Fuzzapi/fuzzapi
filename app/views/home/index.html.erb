@@ -1,0 +1,48 @@
+<div class="container">
+  <%= form_tag scan_path  do %>
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="text" name="url" class="form-control" aria-describedby="url" placeholder="Enter URL">
+    </div>
+
+    <div class="form-group">
+      <label for="method">Method</label>
+      <input type="text" name="method" class="form-control" placeholder="Method">
+    </div>
+
+    <div class="form-group">
+      <label for="cookies">Parameters</label>
+      <textarea name="parameters" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="cookies">Cookies</label>
+      <textarea name="cookies" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  <% end %>
+</div>
+
+<% if @vulnerabilites %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Parameter</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vulnerabilites.each do |vulnerability| %>
+        <tr class="<%= tr_class vulnerability.type %>">
+          <td><%= vulnerability.type %></td>
+          <td><%= vulnerability.description %></td>
+          <td><%= vulnerability.parameter %></td>
+          <td><%= vulnerability.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
