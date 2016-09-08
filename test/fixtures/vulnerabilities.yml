@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  scan_id: 1
+  type: 
+  parameter: MyString
+  description: MyText
+  value: MyString
+
+two:
+  type: 
+  scan_id: 1
+  type: 
+  parameter: MyString
+  description: MyText
+  value: MyString

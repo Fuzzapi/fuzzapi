@@ -1,0 +1,22 @@
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Parameter</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vulnerabilities.each do |vulnerability| %>
+        <tr class="<%= tr_class(vulnerability.type) if vulnerability.is_a? API_Fuzzer::Vulnerability %>">
+          <td><%= vulnerability.type %></td>
+          <td><%= vulnerability.description %></td>
+          <td><%= vulnerability.parameter %></td>
+          <td><%= vulnerability.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
