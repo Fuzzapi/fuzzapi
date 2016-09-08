@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:lalithr95/API-fuzzer
+  revision: ca53c169e0bb8f0a4ba45d2f378dc9bc91b46e84
+  specs:
+    API_Fuzzer (0.1.0)
+      http (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -37,6 +44,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.4.1)
       execjs
@@ -57,10 +65,21 @@ GEM
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
+    domain_name (0.5.20160826)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    http (2.0.3)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -158,6 +177,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -168,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  API_Fuzzer!
   bootstrap (~> 4.0.0.alpha3.1)
   byebug
   coffee-rails (~> 4.1.0)
