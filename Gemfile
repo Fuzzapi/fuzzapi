@@ -34,6 +34,7 @@ gem 'puma'
 gem 'pg'
 gem 'sinatra', :require => false
 
+gem 'rollbar'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
