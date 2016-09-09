@@ -1,21 +1,26 @@
-require 'sidekiq_calculations'
+if Rails.env.production?
 
-Sidekiq.configure_client do |config|
-  sidekiq_calculations = SidekiqCalculations.new
-  sidekiq_calculations.raise_error_for_env!
+  Sidekiq.configure_client do |config|
+    config.redis = { url: ENV['REDIS_URL'], size: 2 }
+  end
 
-  config.redis = {
-    url: ENV['REDISCLOUD_URL'],
-    size: sidekiq_calculations.client_redis_size
-  }
-end
+  Sidekiq.configure_server do |config|
+    config.redis = { url: ENV['REDIS_URL'], size: 20 }
 
-Sidekiq.configure_server do |config|
-  sidekiq_calculations = SidekiqCalculations.new
-  sidekiq_calculations.raise_error_for_env!
+    Rails.application.config.after_initialize do
+      Rails.logger.info("DB Connection Pool size for Sidekiq Server before disconnect is: #{ActiveRecord::Base.connection.pool.instance_variable_get('@size')}")
+      ActiveRecord::Base.connection_pool.disconnect!
 
-  config.options[:concurrency] = sidekiq_calculations.server_concurrency_size
-  config.redis = {
-    url: ENV['REDISCLOUD_URL']
-  }
-end
+      ActiveSupport.on_load(:active_record) do
+        config = Rails.application.config.database_configuration[Rails.env]
+        config['reaping_frequency'] = ENV['DATABASE_REAP_FREQ'] || 10 # seconds
+        # config['pool'] = ENV['WORKER_DB_POOL_SIZE'] || Sidekiq.options[:concurrency]
+        config['pool'] = 16
+        ActiveRecord::Base.establish_connection(config)
+
+        Rails.logger.info("DB Connection Pool size for Sidekiq Server is now: #{ActiveRecord::Base.connection.pool.instance_variable_get('@size')}")
+      end
+    end
+  end
+
+end  
