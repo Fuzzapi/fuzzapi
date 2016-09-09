@@ -1,6 +1,6 @@
 class SidekiqCalculations
   DEFAULT_CLIENT_REDIS_SIZE  = 2
-  DEFAULT_SERVER_CONCURRENCY = 25
+  DEFAULT_SERVER_CONCURRENCY = 27
 
   def raise_error_for_env!
     return if !Rails.env.production?
@@ -45,7 +45,7 @@ Sidekiq Server Configuration failed.
 
     # ENV used in `config/puma.rb` too.
     def puma_workers
-      Integer(ENV.fetch("WEB_CONCURRENCY", 2))
+      Integer(27)
     end
 
     # ENV used in `config/puma.rb` too.
