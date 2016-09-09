@@ -32,6 +32,7 @@ gem 'sidekiq'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'puma'
 gem 'pg'
+gem 'redis'
 gem 'sinatra', :require => false
 
 gem 'rollbar'
