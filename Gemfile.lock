@@ -202,6 +202,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.6)
   rails-assets-tether (>= 1.1.0)!
+  redis
   rollbar
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
