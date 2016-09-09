@@ -25,7 +25,7 @@ Sidekiq Server Configuration failed.
   end
 
   def server_concurrency_size
-    return DEFAULT_SERVER_CONCURRENCY if !Rails.env.production?
+    return DEFAULT_SERVER_CONCURRENCY
 
     (max_redis_connection - client_redis_size - sidekiq_reserved) / worker_dynos / paranoid_divisor
   end
