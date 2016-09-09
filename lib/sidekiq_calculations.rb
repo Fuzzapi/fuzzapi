@@ -32,7 +32,7 @@ Sidekiq Server Configuration failed.
 
   private
     def web_dynos
-      Integer(ENV.fetch('NUMBER_OF_WEB_DYNOS') || 1)
+      Integer(1)
     end
 
     def worker_dynos
