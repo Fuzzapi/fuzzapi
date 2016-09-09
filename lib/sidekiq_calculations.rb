@@ -32,15 +32,15 @@ Sidekiq Server Configuration failed.
 
   private
     def web_dynos
-      Integer(ENV.fetch('NUMBER_OF_WEB_DYNOS'))
+      Integer(ENV.fetch('NUMBER_OF_WEB_DYNOS') || 1)
     end
 
     def worker_dynos
-      Integer(ENV.fetch('NUMBER_OF_WORKER_DYNOS'))
+      Integer(ENV.fetch('NUMBER_OF_WORKER_DYNOS') || 2)
     end
 
     def max_redis_connection
-      Integer(ENV.fetch('MAX_REDIS_CONNECTION'))
+      Integer(ENV.fetch('MAX_REDIS_CONNECTION') || 20)
     end
 
     # ENV used in `config/puma.rb` too.
