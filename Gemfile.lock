@@ -1,6 +1,6 @@
 GIT
-  remote: https://3bd979afce56c522fe573295c247e092d7240e52:x-oauth-basic@github.com/lalithr95/API-fuzzer.git
-  revision: 3e14df20a2c9c6e8dbee7345c965e0dacb8ae1ab
+  remote: https://b057bbdbdbebfd753a1f2af479bef9abb44ca9fc:x-oauth-basic@github.com/lalithr95/API-fuzzer.git
+  revision: 1f1daf31ee0bfcd13856664c77544001b60f5165
   specs:
     API_Fuzzer (0.1.0)
       http (~> 2.0)
