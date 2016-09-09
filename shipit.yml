@@ -1,0 +1,3 @@
+deploy:
+  override:
+    - push-to-heroku shipit-bot
