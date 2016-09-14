@@ -21,6 +21,8 @@ class ScansController < ApplicationController
       cookies: cookies
     }
     @scan = Scan.create!(options)
+    options.delete(:parameters)
+    options.merge!(params: parameters)
     ScanVulnerabilityWorker.perform_async(@scan.id, options)
     redirect_to scan_path(@scan)
   end
