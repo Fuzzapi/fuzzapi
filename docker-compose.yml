@@ -1,0 +1,18 @@
+web:
+  build: .
+  volumes:
+    - .:/app
+  links:
+    - redis
+  ports:
+    - "3000:3000"
+  command: rails server -b 0.0.0.0
+sidekiq:
+  build: .
+  volumes:
+    - .:/app
+  links:
+    - redis
+  command: sidekiq -C config/sidekiq.yml
+redis:
+  image: redis
