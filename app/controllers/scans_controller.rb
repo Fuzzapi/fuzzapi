@@ -9,20 +9,20 @@ class ScansController < ApplicationController
 
   def create
     url = params[:url]
-    parameters = params[:parameters] || ""
+    parameters = params[:parameters].empty? ? [] : params[:parameters]
     method = params[:method].nil? ? "" : JSON.generate(params[:method])
     cookies = params[:cookies].empty? ? {} : JSON.generate(params[:cookies].split("\n").map { |line| [line.split(':').first, line.split(':').last] }.to_h)
 
     options = {
       url: url,
       sid: Digest::MD5.hexdigest(Time.now.to_i.to_s),
-      parameters: parameters,
+      parameters: parameters.join(" "),
       method: method,
       cookies: cookies
     }
     @scan = Scan.create!(options)
-    options.delete(:parameters)
-    options.merge!(params: parameters)
+
+    options.merge!(params: parameters || {})
     ScanVulnerabilityWorker.perform_async(@scan.id, options)
     redirect_to scan_path(@scan)
   end

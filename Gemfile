@@ -25,7 +25,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'API_Fuzzer', github: "lalithr95/API-fuzzer"
+gem 'API_Fuzzer', git: "https://github.com/lalithr95/API-fuzzer.git"
 
 # gem 'API_Fuzzer', git: 'git@github.com:lalithr95/API-fuzzer'
 gem 'sidekiq'
