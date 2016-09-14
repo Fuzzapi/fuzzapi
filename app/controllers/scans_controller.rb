@@ -16,13 +16,13 @@ class ScansController < ApplicationController
     options = {
       url: url,
       sid: Digest::MD5.hexdigest(Time.now.to_i.to_s),
-      parameters: parameters.join(" "),
+      parameters: parameters,
       method: method,
       cookies: cookies
     }
     @scan = Scan.create!(options)
 
-    options.merge!(params: parameters || {})
+    options.merge!(params: (parameters.empty? ? {} : parameters))
     ScanVulnerabilityWorker.perform_async(@scan.id, options)
     redirect_to scan_path(@scan)
   end

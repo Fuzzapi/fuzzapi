@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160908042056) do
+ActiveRecord::Schema.define(version: 20160914032241) do
 
   create_table "scans", force: :cascade do |t|
     t.string   "url"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160908042056) do
   end
 
   create_table "vulnerabilities", force: :cascade do |t|
-    t.string   "type"
+    t.string   "class_type"
     t.integer  "scan_id"
     t.string   "parameter"
     t.text     "description"
