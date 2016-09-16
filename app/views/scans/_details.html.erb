@@ -1,0 +1,28 @@
+<br>
+<div class="card card-outline-primary text-xs-center">
+  <div class="card-block">
+    <blockquote class="card-blockquote">
+      <div class="row">
+        <div class="col-md-3">
+          <h6>URL</h6>
+        </div>
+        <div class="col-md-9">
+          <%= link_to @scan.url, @scan.url %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <h6>Methods</h6>
+        </div>
+        <div class="col-md-9">
+          <% if @scan.method.empty? %>
+            <%= ['GET', 'POST'].join(' ') %>
+          <% else %>
+            <%= JSON.parse(@scan.method).join(" ") %>
+          <% end %>
+        </div>
+      </div>
+    </blockquote>
+  </div>
+</div>
