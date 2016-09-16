@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914032241) do
+ActiveRecord::Schema.define(version: 20160916032457) do
 
   create_table "scans", force: :cascade do |t|
     t.string   "url"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160914032241) do
     t.string   "parameters"
     t.string   "method"
     t.string   "cookies"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "json",       default: false
   end
 
   create_table "vulnerabilities", force: :cascade do |t|

@@ -1,20 +1,34 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Parameter</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @vulnerabilities.each do |vulnerability| %>
-      <tr class="<%= tr_class(vulnerability.status) if vulnerability.type == 'Vulnerability' %>">
-        <td><%= vulnerability.status %></td>
-        <td><%= vulnerability.description %></td>
-        <td><%= vulnerability.parameter %></td>
-        <td><%= vulnerability.value %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class=" col-md-12">
+  <%= render partial: 'details', locals: { scan: @scan } %>
+
+  <div class="card card-outline-secondary text-xs-center">
+    <div class="card-block">
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Parameter</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @vulnerabilities.each_with_index do |vulnerability, index| %>
+            <tr class="<%= tr_class(vulnerability.status) if vulnerability.class_type == 'Vulnerability' %>">
+              <td><%= index + 1 %></td>
+              <td>
+                <b><span class="tag <%= badge(vulnerability.status) %>">
+                  <%= vulnerability.status %>
+                </span></b>
+              </td>
+              <td><%= vulnerability.description %></td>
+              <td><%= vulnerability.parameter %></td>
+              <td><%= vulnerability.value %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
