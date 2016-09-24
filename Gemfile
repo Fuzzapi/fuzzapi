@@ -25,8 +25,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'API_Fuzzer', git: "https://github.com/lalithr95/API-fuzzer.git"
-
+gem 'API_Fuzzer', path: '/Users/Lalith/Documents/gsoc/API-fuzzer'
+#git: "https://github.com/lalithr95/API-fuzzer.git"
 # gem 'API_Fuzzer', git: 'git@github.com:lalithr95/API-fuzzer'
 gem 'sidekiq'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
@@ -59,4 +59,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

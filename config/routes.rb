@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :scans, except: [:update, :edit]
   mount Sidekiq::Web => '/sidekiq'
+  mount API_Fuzzer::Engine => '/'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
