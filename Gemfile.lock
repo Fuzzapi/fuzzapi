@@ -1,9 +1,11 @@
-PATH
-  remote: /Users/Lalith/Documents/gsoc/API-fuzzer
+GIT
+  remote: https://github.com/lalithr95/API-fuzzer.git
+  revision: b805923840ea59964095160c527244b925c3c9f8
   specs:
     API_Fuzzer (0.1.0)
       activesupport
       http (~> 2.0)
+      rails (>= 4.2)
 
 GEM
   remote: https://rubygems.org/

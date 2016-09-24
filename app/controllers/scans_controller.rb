@@ -31,7 +31,8 @@ class ScansController < ApplicationController
       params: params_parser(parameters),
       method: method,
       cookies: cookies_parser(cookies),
-      json: json
+      json: json,
+      scan: @scan.id
     }
     ScanVulnerabilityWorker.perform_async(@scan.id, job_options)
     redirect_to scan_path(@scan)
