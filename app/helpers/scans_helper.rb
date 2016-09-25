@@ -23,4 +23,25 @@ module ScansHelper
     end
     parsed_cookies
   end
+
+  def group_vulnerbility_count(vulnerabilities)
+    [
+      {
+        name: 'LOW',
+        y: vulnerabilities['LOW'] || 0
+      },
+      {
+        name: 'MEDIUM',
+        y: vulnerabilities['MEDIUM'] || 0
+      },
+      {
+        name: 'HIGH',
+        y: vulnerabilities['HIGH'] || 0
+      },
+      {
+        name: 'INFORMATIVE',
+        y: vulnerabilities['INFORMATIVE'] || 0
+      }
+    ]
+  end
 end

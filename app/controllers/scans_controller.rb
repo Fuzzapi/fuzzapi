@@ -1,11 +1,11 @@
 class ScansController < ApplicationController
   include ScansHelper
+  before_action :load_scan, only: [:show, :vulnerability_chart]
 
   def index
   end
 
   def show
-    @scan = Scan.find(params[:id])
     @vulnerabilities ||= @scan.vulnerabilities
   end
 
@@ -38,6 +38,21 @@ class ScansController < ApplicationController
     redirect_to scan_path(@scan)
   end
 
+  def vulnerability_chart
+    vulnerabilities = @scan.vulnerabilities.group(:status).count
+    render json: group_vulnerbility_count(vulnerabilities)
+  end
+
+  def test
+    redirect_to params[:url]
+  end
+
   def destroy
+  end
+
+  private
+
+  def load_scan
+    @scan = Scan.find(params[:id])
   end
 end

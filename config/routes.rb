@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :scans, except: [:update, :edit]
+  get '/scan/:id/vulnerabilities/chart' => 'scans#vulnerability_chart'
+  get '/scanning/test' => 'scans#test'
   mount Sidekiq::Web => '/sidekiq'
   mount API_Fuzzer::Engine => '/'
   # Example of regular route:
