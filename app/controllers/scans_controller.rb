@@ -29,7 +29,7 @@ class ScansController < ApplicationController
     job_options = {
       url: url,
       params: params_parser(parameters),
-      method: method,
+      method: JSON.parse(method),
       cookies: cookies_parser(cookies),
       json: json,
       scan: @scan.id
