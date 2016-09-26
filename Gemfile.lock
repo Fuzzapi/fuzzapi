@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/lalithr95/API-fuzzer.git
-  revision: a0b4080ef12be61587839c3bbe05c7a87019314d
+  revision: 04194c60efe5646927c5e2867bb553f3ff096774
   specs:
     API_Fuzzer (0.1.0)
       activesupport
@@ -101,7 +101,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    minitest (5.9.0)
+    minitest (5.9.1)
     multi_json (1.12.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
