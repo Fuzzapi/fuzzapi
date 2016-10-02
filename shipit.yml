@@ -1,9 +1,9 @@
 deploy:
   override:
-    - GIT_FLAGS='-f' push-to-heroku fuzzapi
+    - GIT_FLAGS='-f' push-to-heroku apifuzzer
 tasks:
   restart:
     action: Restart application
     description: Trigger a restart of the Heroku app
     steps:
-      - heroku restart --app fuzzapi
+      - heroku restart --app apifuzzer
