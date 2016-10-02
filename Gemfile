@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'API_Fuzzer', git: "https://github.com/lalithr95/API-fuzzer.git"
 #git: "https://github.com/lalithr95/API-fuzzer.git"
 gem 'highcharts-rails'
-# gem 'API_Fuzzer', git: 'git@github.com:lalithr95/API-fuzzer'
+gem 'newrelic_rpm'
 gem 'sidekiq'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'puma'
