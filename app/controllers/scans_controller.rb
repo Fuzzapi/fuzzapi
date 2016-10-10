@@ -13,7 +13,7 @@ class ScansController < ApplicationController
     url = params[:url]
     parameters = params[:parameters]
     method = params[:method].nil? ? "" : JSON.generate(params[:method])
-    cookies = params[:cookies]
+    headers = params[:headers]
     json = params[:json]
 
     options = {
@@ -21,17 +21,19 @@ class ScansController < ApplicationController
       sid: Digest::MD5.hexdigest(Time.now.to_i.to_s),
       parameters: parameters,
       method: method,
-      cookies: cookies,
+      cookies: headers, # rename column to headers
       json: json
     }
     @scan = Scan.create!(options)
 
+    headers, cookies = headers_parser(headers)
     job_options = {
       url: url,
       params: params_parser(parameters),
       method: JSON.parse(method),
-      cookies: cookies_parser(cookies),
+      cookies: cookies,
       json: json,
+      headers: headers,
       scan: @scan.id
     }
     ScanVulnerabilityWorker.perform_async(@scan.id, job_options)

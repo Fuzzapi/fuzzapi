@@ -24,6 +24,22 @@ module ScansHelper
     parsed_cookies
   end
 
+  def headers_parser(headers)
+    return if headers.empty?
+
+    parsed_headers = {}
+    parsed_cookies = {}
+    headers.split("\n").each do |header|
+      key, value = header.split(": ")
+      if key.downcase == 'cookie'
+        parsed_cookies = cookies_parser(value)
+      else
+        parsed_headers[key] = value
+      end
+    end
+    [parsed_headers, parsed_cookies]
+  end
+
   def group_vulnerbility_count(vulnerabilities)
     [
       {
