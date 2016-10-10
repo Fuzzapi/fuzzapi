@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/lalithr95/API-fuzzer.git
-  revision: 674f396c97530d75a4ba07a3dd529b2753c1067b
+  revision: 539deabfd9b8fd88de6004e8f91c94f0054992d4
   specs:
     API_Fuzzer (0.1.0)
       activesupport
@@ -104,11 +104,9 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     newrelic_rpm (3.15.2.317)
-    nokogiri (1.6.8)
+    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
     pg (0.18.4)
-    pkg-config (1.1.7)
     puma (3.4.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -222,4 +220,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.1
+   1.13.2
