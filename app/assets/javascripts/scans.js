@@ -3,6 +3,10 @@ $(function () {
 
   function fetch_analytics() {
     var sid = $('#vulnerability-container').data('scan')
+    if (sid == undefined) {
+      return;
+    }
+
     $.ajax({
       url: '/scan/' + sid + '/vulnerabilities/chart',
       method: 'GET',
