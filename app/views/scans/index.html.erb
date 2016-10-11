@@ -1,0 +1,18 @@
+<div class="col-md-12">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>URL</th>
+        <th>Vulnerability count</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @scans.each do |scan| %>
+      <td><%= scan.id %></td>
+      <td><%= link_to scan.url, scan.url %></td>
+      <td><%= scan.vulnerabilities.count %></td>
+    <% end %>
+    </tbody>
+  </table>
+</div>

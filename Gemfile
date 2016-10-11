@@ -35,8 +35,9 @@ gem 'puma'
 gem 'pg'
 gem 'redis'
 gem 'sinatra', :require => false
-
+gem 'devise'
 gem 'rollbar'
+gem 'devise-bootstrap-views'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

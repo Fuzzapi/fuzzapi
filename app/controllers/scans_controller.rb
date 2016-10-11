@@ -3,6 +3,7 @@ class ScansController < ApplicationController
   before_action :load_scan, only: [:show, :vulnerability_chart]
 
   def index
+    @scans = current_user.scans
   end
 
   def show
@@ -24,7 +25,7 @@ class ScansController < ApplicationController
       cookies: headers, # rename column to headers
       json: json
     }
-    @scan = Scan.create!(options)
+    @scan = current_user.scans.create!(options)
 
     headers, cookies = headers_parser(headers)
     job_options = {
