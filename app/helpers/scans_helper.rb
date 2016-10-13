@@ -34,7 +34,7 @@ module ScansHelper
       if key.downcase == 'cookie'
         parsed_cookies = cookies_parser(value)
       else
-        parsed_headers[key] = value
+        parsed_headers[key] = value.gsub('\r', '') if value
       end
     end
     [parsed_headers, parsed_cookies]

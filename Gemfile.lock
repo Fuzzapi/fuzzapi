@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/lalithr95/API-fuzzer.git
-  revision: 539deabfd9b8fd88de6004e8f91c94f0054992d4
+  revision: 26b60e42caa460d9c6f456f152de0f03bab4111f
   specs:
     API_Fuzzer (0.1.0)
       activesupport

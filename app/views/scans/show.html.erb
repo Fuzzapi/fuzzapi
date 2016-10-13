@@ -15,17 +15,19 @@
         </thead>
         <tbody>
           <% @vulnerabilities.each_with_index do |vulnerability, index| %>
-            <tr class="<%= tr_class(vulnerability.status) if vulnerability.class_type == 'Vulnerability' %>">
-              <td><%= index + 1 %></td>
-              <td>
-                <b><span class="tag <%= badge(vulnerability.status) %>">
-                  <%= vulnerability.status %>
-                </span></b>
-              </td>
-              <td><%= vulnerability.description %></td>
-              <td><%= vulnerability.parameter %></td>
-              <td><%= vulnerability.value %></td>
-            </tr>
+            <% if vulnerability.class_type == 'Vulnerability' %>
+              <tr class="<%= tr_class(vulnerability.status) %>">
+                <td><%= index + 1 %></td>
+                <td>
+                  <b><span class="tag <%= badge(vulnerability.status) %>">
+                    <%= vulnerability.status %>
+                  </span></b>
+                </td>
+                <td><%= vulnerability.description %></td>
+                <td><%= vulnerability.parameter %></td>
+                <td><%= vulnerability.value %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
