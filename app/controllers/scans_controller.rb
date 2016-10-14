@@ -1,6 +1,6 @@
 class ScansController < ApplicationController
   include ScansHelper
-  before_action :load_scan, only: [:show, :vulnerability_chart]
+  before_action :load_scan, only: [:show, :destroy, :vulnerability_chart]
 
   def index
     @scans = current_user.scans
@@ -38,6 +38,7 @@ class ScansController < ApplicationController
       scan: @scan.id
     }
     ScanVulnerabilityWorker.perform_async(@scan.id, job_options)
+    flash[:notice] = "Your scan is being processed"
     redirect_to scan_path(@scan)
   end
 
@@ -51,6 +52,9 @@ class ScansController < ApplicationController
   end
 
   def destroy
+    @scan.destroy
+    flash[:notice] = "Scan has been successfully deleted"
+    redirect_to scans_path
   end
 
   private

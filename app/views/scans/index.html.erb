@@ -5,13 +5,17 @@
         <th>#</th>
         <th>URL</th>
         <th>Vulnerability count</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
     <% @scans.each do |scan| %>
-      <td><%= scan.id %></td>
+    <tr>
+      <td><%= link_to scan_path(scan.id), scan_path(scan.id) %></td>
       <td><%= link_to scan.url, scan.url %></td>
       <td><%= scan.vulnerabilities.count %></td>
+      <td><%= link_to "Delete scan", scan_path(scan), method: :delete, class: 'btn btn-danger' %>
+    </tr>
     <% end %>
     </tbody>
   </table>
