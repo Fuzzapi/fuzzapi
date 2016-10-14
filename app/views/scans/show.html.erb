@@ -1,8 +1,11 @@
-<div class=" col-md-12">
+<div class="col-md-12">
   <%= render partial: 'details', locals: { scan: @scan } %>
 
   <div class="card card-outline-secondary text-xs-center">
     <div class="card-block">
+      <div id="spinner" style="display: none;">
+        <%= image_tag 'spinner.svg' %>
+      </div>
       <table class="table">
         <thead>
           <tr>
@@ -34,3 +37,25 @@
     </div>
   </div>
 </div>
+
+<%= javascript_tag do %>
+  <% if @scan.status == 'processing' %>
+    function fetch_scan() {
+      $.ajax({
+        url: '/scans/' + sid + '.json',
+        method: 'GET',
+        beforeSend: function() {
+          $('#spinner').show();
+        },
+        success: function(data) {
+          var status = data['scan']['status'];
+          if (status == 'completed') {
+            location.reload();
+          }
+        }
+      });
+    }
+    var sid = $('#vulnerability-container').data('scan');
+    setInterval(fetch_scan, 3000);
+  <% end %>
+<% end %>

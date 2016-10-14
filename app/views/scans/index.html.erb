@@ -5,6 +5,7 @@
         <th>#</th>
         <th>URL</th>
         <th>Vulnerability count</th>
+        <th>Status</th>
         <th></th>
       </tr>
     </thead>
@@ -14,6 +15,7 @@
       <td><%= link_to scan_path(scan.id), scan_path(scan.id) %></td>
       <td><%= link_to scan.url, scan.url %></td>
       <td><%= scan.vulnerabilities.count %></td>
+      <td><%= scan.status %></td>
       <td><%= link_to "Delete scan", scan_path(scan), method: :delete, class: 'btn btn-danger' %>
     </tr>
     <% end %>

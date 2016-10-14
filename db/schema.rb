@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011064845) do
+ActiveRecord::Schema.define(version: 20161014024647) do
 
   create_table "scans", force: :cascade do |t|
     t.string   "url"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20161011064845) do
     t.string   "parameters"
     t.string   "method"
     t.string   "cookies"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.boolean  "json",       default: false
     t.integer  "user_id"
+    t.string   "status",     default: "processing"
   end
 
   add_index "scans", ["user_id"], name: "index_scans_on_user_id"

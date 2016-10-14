@@ -1,8 +1,9 @@
 $(function () {
+  var loaded = false;
+  var sid = $('#vulnerability-container').data('scan');
   fetch_analytics();
 
   function fetch_analytics() {
-    var sid = $('#vulnerability-container').data('scan')
     if (sid == undefined) {
       return;
     }

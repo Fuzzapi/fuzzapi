@@ -8,12 +8,21 @@ class ScansController < ApplicationController
 
   def show
     @vulnerabilities ||= @scan.vulnerabilities
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: {
+          scan: @scan,
+          vulnerabilities: @vulnerabilities
+        }
+      }
+    end
   end
 
   def create
     url = params[:url]
     parameters = params[:parameters]
-    method = params[:method].nil? ? "" : JSON.generate(params[:method])
+    method = params[:method].nil? ? JSON.generate(['GET']) : JSON.generate(params[:method])
     headers = params[:headers]
     json = params[:json]
 
