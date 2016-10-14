@@ -17,15 +17,19 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 
 2. Clone the repository into your localmachine
 
-3. `cd /path/Fuzzapi`, move to Fuzzapi directory
+3. `cd /path/Fuzzapi/bin`, move to Fuzzapi directory
 
 4. `bundle install` to install the gem dependencies of the application
+
+5. Delete dependencies from gem file and install separately.
 
 5. `rake db:migrate` to creates tables, migrations etc.
 
 6. `rails s` to run the server
 
 7. Open `http://localhost:3000` in browser which should point to the application url
+
+8. If u get redis server error, install and start the service separately.
 
 Fuzzapi comes with `Docker` to simplify installation processing. Following commands will setup application using `Docker`.
 
