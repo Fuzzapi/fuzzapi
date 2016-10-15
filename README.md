@@ -29,7 +29,17 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 
 7. Open `http://localhost:3000` in browser which should point to the application url
 
-8. If u get redis server error, install and start the service separately. (brew services start redis)
+8. If u get redis server error, install and start the service separately.
+
+9. Close everything and go to Fuzzapi/bin folder.
+
+10. open three tabs of terminal
+
+11. `redis-server` in first tab
+
+12. `bundle exec sidekiq -r urFuzzAPIPath` in second tab
+
+13. `rails s` in third tab then visit and scan localhost:3000
 
 Fuzzapi comes with `Docker` to simplify installation processing. Following commands will setup application using `Docker`.
 
