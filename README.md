@@ -21,7 +21,7 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 
 4. `bundle install` to install the gem dependencies of the application
 
-5. Delete dependencies from gem file and install separately.
+5. Delete dependencies from gem file and install separately if u r finding any specific dependency error.
 
 5. `rake db:migrate` to creates tables, migrations etc.
 
