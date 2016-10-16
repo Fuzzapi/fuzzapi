@@ -17,7 +17,7 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 
 2. Clone the repository into your localmachine
 
-3. `cd /path/Fuzzapi`, move to Fuzzapi directory
+3. `cd /path/Fuzzapi/bin`, move to Fuzzapi directory
 
 4. `bundle install` to install the gem dependencies of the application
 
