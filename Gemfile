@@ -5,7 +5,7 @@ source 'https://rails-assets.org' do
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '~> 4.2.7.1'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
