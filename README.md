@@ -19,9 +19,7 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 
 3. `cd /path/Fuzzapi/bin`, move to Fuzzapi directory
 
-4. `bundle install` to install the gem dependencies of the application
-
-5. Delete dependencies from gem file and install separately if u r finding any specific dependency error.
+4. `bundle install` to install the gem dependencies of the application. (if you are getting some error related to any package search for its dependent packages and install them first. For example if error is related to pg `sudo apt-get install libpq-dev` then `gem install pg -v '0.18.4'`. Mostly people get errors related to nokogiri so here are the commands to resolve `sudo apt-get install build-essential patch` , `sudo apt-get install ruby-dev zlib1g-dev liblzma-dev` , `gem install nokogiri -v '1.6.8.1'`
 
 5. `rake db:migrate` to creates tables, migrations etc.
 
