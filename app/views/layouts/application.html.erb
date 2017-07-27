@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FuzzerApp</title>
+  <title>Fuzzapi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,15 +9,24 @@
 <body>
 
 <nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="/">Fuzzapi</a>
+
+  <a class="navbar-brand" href="/">
+    <%= image_tag 'logo', width: 30, height: 30, class: 'd-inline-block align-top', alt: "Fuzzapi Logo" %>
+    Fuzzapi
+  </a>
+
   <ul class="nav navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="/scans">Scans <span class="sr-only">(current)</span></a>
+      <a class="btn" href="/scans">Scans <span class="sr-only">(current)</span></a>
     </li>
   </ul>
-  <form class="form-inline pull-xs-right">
+
+  <form class="form-inline " style="float: right;">
     <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, class: 'btn pull-xs-right', method: :delete) %>
+    <% end %>
   </form>
 </nav>
 
