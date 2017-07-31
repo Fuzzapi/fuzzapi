@@ -31,6 +31,9 @@ EXPOSE 3000
 # "bundle exec" for each of our commands.
 ENTRYPOINT ["bundle", "exec"]
 
+# To resolve the error: PendingMigrationError
+RUN bundle exec rake db:migrate
+
 # The main command to run when the container starts. Also
 # tell the Rails dev server to bind to all interfaces by
 # default.
