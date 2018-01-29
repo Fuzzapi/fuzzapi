@@ -42,3 +42,8 @@ Fuzzapi comes with `Docker` to simplify installation processing. Following comma
 6. Open `http://localhost:3000` in browser which should point to the application url
 
 Fuzzapi uses [API_Fuzzer](https://github.com/lalithr95/API-Fuzzer) gem.
+
+Authors:
+www.twitter.com/abhijeth;
+www.twitter.com/lalithr95;
+www.twitter.com/srini0x00
