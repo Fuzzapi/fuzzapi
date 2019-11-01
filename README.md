@@ -1,6 +1,6 @@
 # Fuzzapi
 
-Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for gem.
+Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for gem. a
 
 ### New Scan
 <img width="1679" alt="scan body" src="https://cloud.githubusercontent.com/assets/4562611/19390428/12224610-91f6-11e6-9ece-6e3cd7dd35ea.png">
