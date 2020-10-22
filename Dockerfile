@@ -32,6 +32,7 @@ EXPOSE 3000
 ENTRYPOINT ["bundle", "exec"]
 
 # To resolve the error: PendingMigrationError
+RUN gem install rake && bundle install
 RUN bundle exec rake db:migrate
 
 # The main command to run when the container starts. Also
