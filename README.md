@@ -8,7 +8,7 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 ### Scan Result
 <img width="1679" alt="scan" src="https://cloud.githubusercontent.com/assets/4562611/19390442/1ef2f3d0-91f6-11e6-91eb-640b17d64a0b.png">
 
-### Scan Histoy
+### Scan History
 <img width="1679" alt="scan2" src="https://cloud.githubusercontent.com/assets/4562611/19390533/79f83b96-91f6-11e6-9476-c3093b809674.png">
 
 # Setup
