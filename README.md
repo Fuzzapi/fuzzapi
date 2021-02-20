@@ -19,13 +19,25 @@ Fuzzapi is rails application which uses API_Fuzzer and provide UI solution for g
 
 3. `cd /path/Fuzzapi/bin`, move to Fuzzapi directory
 
-4. `bundle install` to install the gem dependencies of the application
+4. `bundle install` to install the gem dependencies of the application. (if you are getting some error related to any package search for its dependent packages and install them first. For example if error is related to pg `sudo apt-get install libpq-dev` then `gem install pg -v '0.18.4'`. Mostly people get errors related to nokogiri so here are the commands to resolve `sudo apt-get install build-essential patch` , `sudo apt-get install ruby-dev zlib1g-dev liblzma-dev` , `gem install nokogiri -v '1.6.8.1'`
 
 5. `rake db:migrate` to creates tables, migrations etc.
 
 6. `rails s` to run the server and run `export REDIS_URL=redis://127.0.0.1:6379/0 && bundle exec sidekiq` to run sidekiq.
 
 7. Open `http://localhost:3000` in browser which should point to the application url
+
+8. If u get redis server error, install and start the service separately. (install: `sudo apt-get -y install redis-server`, check the status: `sudo service redis-server status`)
+
+9. Close everything and go to Fuzzapi/bin folder.
+
+10. open three tabs of terminal
+
+11. `redis-server` in first tab
+
+12. `bundle exec sidekiq -r urFuzzAPIPath` in second tab
+
+13. `rails s` in third tab then visit and scan localhost:3000
 
 Fuzzapi comes with `Docker` to simplify installation processing. Following commands will setup application using `Docker`.
 
